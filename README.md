@@ -8,6 +8,12 @@ The article is not yet available, but we will update the page as soon as it is a
 ## Dataset
 The dataset of this work can be found [here](https://zenodo.org/record/7409660).
 
+## Models
+Our models for each ontology (AutoML) can be found [here](https://drive.google.com/drive/folders/1r4rxT0uLovaPf-HukEBfGQoRPa66_xc4?usp=sharing).
+
+## Predictions
+The predictions of MAGO and MAGO+ can be found [here](https://drive.google.com/drive/folders/12ER5KpZyVXBU3UwKp58fppwFjA0nNCML?usp=sharing).
+
 ## Reproducibility
 * Create the folders ```embs```, ```models```, ```predictions```, and ```base```
 * Unzip the dataset into the ```base``` folder
