@@ -6,7 +6,7 @@ The next-generation sequencing technology and the decreasing cost of experimenta
 The article is not yet available, but we will update the page as soon as it is accessible.
 
 ## Dataset
-The dataset of this work can be found [here](https://zenodo.org/record/7409660).
+The dataset of this work can be found [here](https://zenodo.org/records/10982903).
 
 ## Models
 Our models for each ontology (AutoML) can be found [here](https://drive.google.com/drive/folders/1r4rxT0uLovaPf-HukEBfGQoRPa66_xc4?usp=sharing).
