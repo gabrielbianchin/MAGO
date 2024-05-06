@@ -10,15 +10,15 @@ from utils import *
 @click.option('--ont', '-ont', help="Ontology")
 
 def main(ont):
-  
+
   alpha = {'bp': 0.15, 'cc': 0.46, 'mf': 0.59}
 
-  test = pd.read_csv('base/' + ont + '_test.csv')
+  test = pd.read_csv('base/{}_test.csv'.format(ont))
   y_test = test.iloc[:, 2:].values
   ontologies_names = test.columns[2:].values
 
-  preds_esm = np.load('predictions/mago-' + ont + '.npy')
-  preds_blast = np.load('predictions/blast-' + ont + '.npy')
+  preds_esm = np.load('predictions/mago-{}.npy'.format(ont))
+  preds_blast = np.load('predictions/blast-{}.npy'.format(ont))
 
   if ont == 'bp':
     ontology = generate_ontology('base/go.obo', specific_space=True, name_specific_space='biological_process')
@@ -35,7 +35,7 @@ def main(ont):
       preds.append(j)
   preds = np.array(preds)
   evaluate(preds, y_test, ontologies_names, ontology)
-  np.save('predictions/mago+-' + ont + '.npy', preds)
+  np.save('predictions/mago+-{}.npy'.format(ont), preds)
 
 
 if __name__ == '__main__':

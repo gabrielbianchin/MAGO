@@ -10,25 +10,27 @@ from utils import *
 @click.option('--ont', '-ont', help="Ontology")
 
 def main(ont):
-  
-  train = pd.read_csv('base/' + ont + '_train.csv')
-  test = pd.read_csv('base/' + ont + '_test.csv')
 
-  seq_train = preprocess_blast(base_treino, 'train')
-  seq_test = preprocess_blast(base_teste, 'test')
+  train = pd.read_csv('base/{}_train.csv'.format(ont))
+  test = pd.read_csv('base/{}_test.csv'.format(ont))
+  y_train = train.iloc[:, 2:].values
+  y_test = test.iloc[:, 2:].values
 
-  with open('base/reference-' + ont + '.fasta', 'w') as f:
+  seq_train = preprocess_blast(train, 'train')
+  seq_test = preprocess_blast(test, 'test')
+
+  with open('base/reference-{}.fasta'.format(ont), 'w') as f:
     print(seq_train, file=f)
 
-  with open('base/queries-' + ont + '.fasta', 'w') as f:
+  with open('base/queries-{}.fasta'.format(ont), 'w') as f:
     print(seq_test, file=f)
 
-  os.system('makeblastdb -in "base/reference-' + ont + '.fasta" -dbtype prot')
+  os.system('makeblastdb -in "base/reference-{}.fasta" -dbtype prot'.format(ont))
 
   seq = {}
   s=''
   k=''
-  with open('queries-' + ont + '.fasta', "r") as f:
+  with open('base/queries-{}.fasta'.format(ont), "r") as f:
     for lines in f:
       if lines[0]==">":
         if s!='':
@@ -39,12 +41,12 @@ def main(ont):
         s+=lines.strip('\n')
   seq[k] = s
 
-  output = os.popen('blastp -db base/reference-' + ont + '.fasta -query base/queries-' + ont + '.fasta -outfmt "6 qseqid sseqid bitscore" -evalue 0.001').readlines()
+  output = os.popen('blastp -db base/reference-{}.fasta -query base/queries-{}.fasta -outfmt "6 qseqid sseqid bitscore" -evalue 0.001'.format(ont, ont)).readlines()
 
-  with open('base/output-' + ont + '.txt', 'w') as f:
+  with open('base/output-{}.txt'.format(ont), 'w') as f:
     print(''.join(output), file=f)
 
-  with open('base/output-' + ont + '.txt') as f:
+  with open('base/output-{}.txt'.format(ont)) as f:
     output = f.readlines()
 
   test_bits={}
@@ -78,8 +80,7 @@ def main(ont):
     preds_score.append(probs)
 
   preds_score = np.array(preds_score)
-  np.save('predictions/blast-' + ont + '.npy', preds)
-
+  np.save('predictions/blast-{}.npy'.format(ont), preds_score)
 
 if __name__ == '__main__':
   main()

@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 import os
+import torch
 
 def preprocess(df, subseq):
   prot_list = []
@@ -17,7 +18,7 @@ def preprocess(df, subseq):
 
   return prot_list
 
-def get_embeddings(seq):
+def get_embeddings(seq, tokenizer, model, device):
   batch_seq = [" ".join(list(seq))]
   ids = tokenizer(batch_seq)
   input_ids = torch.tensor(ids['input_ids']).to(device)
