@@ -6,13 +6,13 @@ The next-generation sequencing technology and the decreasing cost of experimenta
 The article is not yet available, but we will update the page as soon as it is accessible.
 
 ## Dataset
-The dataset of this work can be found [here](https://zenodo.org/records/10982903).
+The dataset of this work is available [here](https://zenodo.org/records/10982903).
 
 ## Models
-Our models for each ontology (AutoML) can be found [here](https://drive.google.com/drive/folders/1r4rxT0uLovaPf-HukEBfGQoRPa66_xc4?usp=sharing).
+Our models for each ontology (AutoML) are available [here](https://drive.google.com/drive/folders/1r4rxT0uLovaPf-HukEBfGQoRPa66_xc4?usp=sharing).
 
 ## Predictions
-The predictions of MAGO and MAGO+ can be found [here](https://drive.google.com/drive/folders/12ER5KpZyVXBU3UwKp58fppwFjA0nNCML?usp=sharing).
+The predictions of MAGO and MAGO+ are available [here](https://drive.google.com/drive/folders/12ER5KpZyVXBU3UwKp58fppwFjA0nNCML?usp=sharing).
 
 ## Reproducibility
 * Create the folders ```embs```, ```models```, ```predictions```, and ```base```
@@ -20,7 +20,7 @@ The predictions of MAGO and MAGO+ can be found [here](https://drive.google.com/d
 * For each ontology, run:
 ```
 python extract.py -ont ontology
-python train.py -ont ontology
+python automl.py -ont ontology
 python blast.py -ont ontology
 python ensemble.py -ont ontology
 ```
