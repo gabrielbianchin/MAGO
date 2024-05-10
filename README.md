@@ -6,7 +6,7 @@ The next-generation sequencing technology and the decreasing cost of experimenta
 The article is not yet available, but we will update the page as soon as it is accessible.
 
 ## Dataset
-The dataset of this work is available [here](https://zenodo.org/records/10982903).
+The dataset for this work is available [here](https://zenodo.org/records/10982903).
 
 ## Models
 Our models for each ontology (AutoML) are available [here](https://drive.google.com/drive/folders/1r4rxT0uLovaPf-HukEBfGQoRPa66_xc4?usp=sharing).
@@ -15,8 +15,8 @@ Our models for each ontology (AutoML) are available [here](https://drive.google.
 The predictions of MAGO and MAGO+ are available [here](https://drive.google.com/drive/folders/12ER5KpZyVXBU3UwKp58fppwFjA0nNCML?usp=sharing).
 
 ## Reproducibility
-* Create the folders ```embs```, ```models```, ```predictions```, and ```base```
-* Unzip the dataset into the ```base``` folder
+* Create the folders ```embs```, ```models```, ```predictions```, and ```base```.
+* Unzip the dataset into the ```base``` folder.
 * For each ontology, run:
 ```
 python extract.py -ont ontology
@@ -27,9 +27,9 @@ python ensemble.py -ont ontology
 The parameter **ontology** should be ```bp```, ```cc```, or ```mf``` for Biological Process (BP), Cellular Component (CC), or Molecular Function (MF), respectively.
 
 ## Citation
-This repository contains the source codes of Integrating Transformers and AutoML for Protein Function Prediction, as given in the paper:
+This repository contains the source codes of "Integrating Transformers and AutoML for Protein Function Prediction," as presented in the paper:
 
-Gabriel Bianchin de Oliveira, Helio Pedrini, Zanoni Dias. "Integrating Transformers and AutoML for Protein Function Prediction", in proceedings of the 46th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC). Orlando, USA, 15 - 19 July 2024.
+Gabriel Bianchin de Oliveira, Helio Pedrini, Zanoni Dias. "Integrating Transformers and AutoML for Protein Function Prediction," in proceedings of the 46th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC). Orlando, USA, 15 - 19 July 2024.
 
 If you use this source code and/or its results, please cite our publication:
 ```
@@ -38,7 +38,7 @@ If you use this source code and/or its results, please cite our publication:
   title = {Integrating Transformers and AutoML for Protein Function Prediction},
   booktitle = {46th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)},
   address = {Orlando, USA},
-  month = {jul},
+  month = {Jul},
   year = {2024}
 }
 ```
